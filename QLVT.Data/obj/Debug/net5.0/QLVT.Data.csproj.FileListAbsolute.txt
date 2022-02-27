@@ -1,0 +1,12 @@
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\bin\Debug\net5.0\QLVT.Data.deps.json
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\bin\Debug\net5.0\QLVT.Data.dll
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\bin\Debug\net5.0\ref\QLVT.Data.dll
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\bin\Debug\net5.0\QLVT.Data.pdb
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\obj\Debug\net5.0\QLVT.Data.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\obj\Debug\net5.0\QLVT.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\obj\Debug\net5.0\QLVT.Data.AssemblyInfoInputs.cache
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\obj\Debug\net5.0\QLVT.Data.AssemblyInfo.cs
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\obj\Debug\net5.0\QLVT.Data.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\obj\Debug\net5.0\QLVT.Data.dll
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\obj\Debug\net5.0\ref\QLVT.Data.dll
+C:\Users\PC\OneDrive\Máy tính\QLVT\QLVT.Data\obj\Debug\net5.0\QLVT.Data.pdb
