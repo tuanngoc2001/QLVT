@@ -11,6 +11,7 @@ namespace QLVT.API.Model
     public class BoPhanRepository : IBoPhanRepository
     {
         private readonly MyDBContext _context;
+        private static int PAGE_SIZE { get; set; } = 2;
         public BoPhanRepository(MyDBContext context)
         {
             this._context = context;
@@ -34,9 +35,12 @@ namespace QLVT.API.Model
            
         }
 
-        public async Task<ICollection<BoPhan>> GetAll()
+        public async Task<ICollection<BoPhan>> GetAll(int page)
         {
-            return await _context.boPhans.ToListAsync();
+            //paging
+            var paging=_context.boPhans.AsQueryable();
+            paging = paging.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
+            return await paging.ToListAsync();
         }
 
         public async Task<ICollection<BoPhan>> GetByID(Guid id)
@@ -46,7 +50,7 @@ namespace QLVT.API.Model
 
       
 
-        public async Task UpdateBoPhan(BoPhan bp,Guid id)
+        public async Task UpdateBoPhan(BoPhanModel bp,Guid id)
         {
             var result =await _context.boPhans.SingleOrDefaultAsync(item => item.IDBP == id);
             if(result!=null)
