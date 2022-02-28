@@ -20,9 +20,9 @@ namespace QLVT.API.Controllers
             _context = context;
         }
         [HttpGet]
-        public async Task<ActionResult> GetAll1()
+        public async Task<ActionResult> GetAll1(int page)
         {
-            return Ok(await _context.GetAll());
+            return Ok(await _context.GetAll(page));
         }
         [HttpGet("{id}")]
         public async Task<ActionResult>GetByID1(Guid id)
@@ -30,14 +30,20 @@ namespace QLVT.API.Controllers
             return Ok(await _context.GetByID(id));
         }
         [HttpPost]
-        public async Task CreateNew(BoPhan bp)
+        public async Task CreateNew(BoPhanModel bp)
         {
-            bp.IDBP = new Guid();
-
-            await _context.AddBoPhan(bp);
+            var bophan = new BoPhan()
+            {
+                IDBP = new Guid(),
+                TenBP = bp.TenBP,
+                STT = bp.STT,
+                TenNDD = bp.TenNDD,
+                NgayTao = DateTime.Now,
+            };
+            await _context.AddBoPhan(bophan);
         }
         [HttpPut("{id}")]
-        public async Task UpdateDB(BoPhan bp,Guid id)
+        public async Task UpdateDB(BoPhanModel bp,Guid id)
         {
             await _context.UpdateBoPhan(bp,id);
         }
@@ -46,5 +52,6 @@ namespace QLVT.API.Controllers
         {
             await _context.DeleteBP(id);
         }
+
     }
 }

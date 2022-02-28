@@ -36,6 +36,7 @@ namespace QLVT.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "QLVT.API", Version = "v1" });
             });
             services.AddScoped<IBoPhanRepository, BoPhanRepository>();
+            services.AddScoped<IDangKyRepository, DangKyRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
