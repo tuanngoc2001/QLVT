@@ -17,7 +17,6 @@ namespace QLVT.Data.Entities
         public string TenBP { get; set; }
         [MaxLength(50)]
         public string TenNDD { get; set; }
-        public virtual ICollection<DangKy> matHangs { get; set; }
         public DateTime NgayTao { get; set; }
         public int STT { get; set; }
 

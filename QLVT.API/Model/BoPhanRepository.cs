@@ -16,16 +16,51 @@ namespace QLVT.API.Model
             this._context = context;
         }
 
-        public async Task<BoPhan> AddBoPhan(BoPhan bp)
+        public async Task AddBoPhan(BoPhan bp)
         {
-            var bophan =await _context.boPhans.AddAsync(bp);
+            await _context.boPhans.AddAsync(bp);
             await _context.SaveChangesAsync();
-            return bophan.Entity;
+            
+        }
+
+        public async Task DeleteBP(Guid id)
+        {
+            var result = await _context.boPhans.SingleOrDefaultAsync(p => p.IDBP == id);
+            if (result != null)
+            {
+                _context.Remove(result);
+                await _context.SaveChangesAsync();
+            }  
+           
         }
 
         public async Task<ICollection<BoPhan>> GetAll()
         {
             return await _context.boPhans.ToListAsync();
         }
+
+        public async Task<ICollection<BoPhan>> GetByID(Guid id)
+        {
+            return await _context.boPhans.Where(p => p.IDBP == id).ToListAsync();
+        }
+
+      
+
+        public async Task UpdateBoPhan(BoPhan bp,Guid id)
+        {
+            var result =await _context.boPhans.SingleOrDefaultAsync(item => item.IDBP == id);
+            if(result!=null)
+            {
+                result.TenBP = bp.TenBP;
+                result.TenNDD = bp.TenNDD;
+                result.STT = bp.STT;
+                result.NgayTao = bp.NgayTao;
+                await _context.SaveChangesAsync();
+            } 
+           
+
+        }
+
+       
     }
 }

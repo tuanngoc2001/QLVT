@@ -22,12 +22,29 @@ namespace QLVT.API.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAll1()
         {
-            return Ok( await _context.GetAll());
+            return Ok(await _context.GetAll());
+        }
+        [HttpGet("{id}")]
+        public async Task<ActionResult>GetByID1(Guid id)
+        {
+            return Ok(await _context.GetByID(id));
         }
         [HttpPost]
-        public async Task<ActionResult>AddBoPhan(BoPhan bp)
+        public async Task CreateNew(BoPhan bp)
         {
-            return Ok(await _context.AddBoPhan(bp));
+            bp.IDBP = new Guid();
+
+            await _context.AddBoPhan(bp);
+        }
+        [HttpPut("{id}")]
+        public async Task UpdateDB(BoPhan bp,Guid id)
+        {
+            await _context.UpdateBoPhan(bp,id);
+        }
+        [HttpDelete("{id}")]
+        public async Task DeleteDB(Guid id)
+        {
+            await _context.DeleteBP(id);
         }
     }
 }
